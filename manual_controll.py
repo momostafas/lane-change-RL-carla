@@ -805,6 +805,9 @@ def game_loop(args):
 
         clock = pygame.time.Clock()
         while True:
+
+            # source # dest 
+
             waypoint01 = map.get_waypoint(world.get_player_location(),project_to_road=True, lane_type=(carla.LaneType.Driving | carla.LaneType.Sidewalk))
             lanechange = waypoint01.lane_change
             laneSTR = str(lanechange)
