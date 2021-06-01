@@ -79,7 +79,6 @@ import math
 import random
 import re
 import weakref
-
 try:
     import pygame
     from pygame.locals import KMOD_CTRL
@@ -805,11 +804,12 @@ def game_loop(args):
 
         clock = pygame.time.Clock()
         while True:
-
-            # source # dest 
-
             waypoint01 = map.get_waypoint(world.get_player_location(),project_to_road=True, lane_type=(carla.LaneType.Driving | carla.LaneType.Sidewalk))
             lanechange = waypoint01.lane_change
+            # change waypoint into lat-lng - geolocation
+            # # any random dest 
+            # response = requests.get("https://api.open-notify.org/astros.json Src + dest")
+            # response.json() => waypoints 
             laneSTR = str(lanechange)
             # changeRight = lanechange == 'Right' ? world.setLaneChange(client, True): 
             # print('lane', laneSTR)                
